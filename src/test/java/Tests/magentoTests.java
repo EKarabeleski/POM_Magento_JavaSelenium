@@ -51,6 +51,7 @@ public class magentoTests extends baseClass {
         magentoTest.sendText("password-confirmation", confirmPassword);
         magentoTest.clickRegister("//*[@class='action submit primary']");
         Thread.sleep(3000);
+
     }
 }
 

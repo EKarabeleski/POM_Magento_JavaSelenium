@@ -54,6 +54,7 @@ public class dataProviders {
         FileWriter fileWriter = new FileWriter("generatedData.txt");
         PrintWriter printWriter = new PrintWriter(fileWriter);
 
+
         for (i = 0; i < 3; i++) {
             String password = faker.internet().password(8, 12, true, true, true);
             registerData[i][0] = faker.name().firstName();
@@ -61,14 +62,11 @@ public class dataProviders {
             registerData[i][2] = faker.internet().emailAddress();
             registerData[i][3] = password;
             registerData[i][4] = password;
+            // Save to file
+            printWriter.println(Arrays.deepToString(registerData));
         }
-
-
-        // Save to file
-        printWriter.println(Arrays.deepToString(registerData));
         printWriter.close();
         fileWriter.close();
-
         return registerData;
     }
 }
