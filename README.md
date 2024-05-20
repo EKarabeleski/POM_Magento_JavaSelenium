@@ -7,4 +7,4 @@ We need to create 3 tests to cover the following scenarios:
  2. Add 2 products in the shopping cart and click proceed to checkout.
  3. End to end test where we cover the whole flow(register accout, adding two products, proceed to checkout, payment etc).
  4. Dodavam nesto 
-5. 
+5. test
