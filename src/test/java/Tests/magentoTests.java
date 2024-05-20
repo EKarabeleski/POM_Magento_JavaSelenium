@@ -5,7 +5,7 @@ import Utils.baseClass;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-//git test
+
 public class magentoTests extends baseClass {
     @Test(dataProvider = "RegisterDataProvider")
     public void createAnAccount(String firstname, String lastname, String email, String password, String confirmPassword) throws InterruptedException {
