@@ -14,12 +14,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class dataProviders {
-    @DataProvider(name = "5ArrayDataProvider")
+    @DataProvider(name = "DataProviderAccountRegistration")
     public Object[][] test3Data() {
         return new Object[][]{
-                {"Marena", "Izkovitz", "mhoyti@uiuc.edu", "eY3/|Z<'p'9n", "eY3/|Z<'p'9n"},
-//                {"Zachary", "Trynor", "ztrynoro@angelfire.com", "wM3$P3/#?Y2M*D(Y", "wM3$P3/#?Y2M*D(Y"},
-//                {"Filippo", "Piff", "fpifft@newsvine.com", "fS9/VF'F7ZBtN", "fS9/VF'F7ZBtN"},
+                {"Marena", "Izkovitz", "ksolanj@wikimedia.org", "eY3/|Z<'p'9n", "eY3/|Z<'p'9n"},
+                {"Zachary", "Trynor", "ztrynoro@angelfire.com", "wM3$P3/#?Y2M*D(Y", "wM3$P3/#?Y2M*D(Y"},
+                {"Filippo", "Piff", "fpifft@newsvine.com", "fS9/VF'F7ZBtN", "fS9/VF'F7ZBtN"},
         };
     }
 
@@ -68,5 +68,13 @@ public class dataProviders {
         printWriter.close();
         fileWriter.close();
         return registerData;
+    }
+    @DataProvider(name = "AccountRegistration")
+    public Object[][] testCart() {
+        return new Object[][]{
+                {"Marena", "Izkovitz", "swillingham1w@goo.ne.jp", "eY3/|Z<'p'9n", "eY3/|Z<'p'9n"},
+//                {"Zachary", "Trynor", "ztrynoro@angelfire.com", "wM3$P3/#?Y2M*D(Y", "wM3$P3/#?Y2M*D(Y"},
+//                {"Filippo", "Piff", "fpifft@newsvine.com", "fS9/VF'F7ZBtN", "fS9/VF'F7ZBtN"},
+        };
     }
 }
