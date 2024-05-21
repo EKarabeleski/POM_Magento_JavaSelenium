@@ -69,12 +69,10 @@ public class dataProviders {
         fileWriter.close();
         return registerData;
     }
-    @DataProvider(name = "AccountRegistration")
+    @DataProvider(name = "SignIn")// Using to test Add to cart functionality
     public Object[][] testCart() {
         return new Object[][]{
-                {"Marena", "Izkovitz", "swillingham1w@goo.ne.jp", "eY3/|Z<'p'9n", "eY3/|Z<'p'9n"},
-//                {"Zachary", "Trynor", "ztrynoro@angelfire.com", "wM3$P3/#?Y2M*D(Y", "wM3$P3/#?Y2M*D(Y"},
-//                {"Filippo", "Piff", "fpifft@newsvine.com", "fS9/VF'F7ZBtN", "fS9/VF'F7ZBtN"},
+                {"ztrynoro@angelfire.com", "wM3$P3/#?Y2M*D(Y"},
         };
     }
 }

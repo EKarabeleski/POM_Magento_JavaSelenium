@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class magentoTests extends baseClass {
-    @Test(dataProvider = "RegisterDataProvider")
+    @Test(dataProvider = "RegisterDataProvider")// ovoj test ne rabot na ignore  e da go proveram//
     public void registerAccount(String firstname, String lastname, String email, String password, String confirmPassword) throws InterruptedException {
         magento magentoTest = new magento(driver);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
