@@ -17,9 +17,9 @@ public class dataProviders {
     @DataProvider(name = "5ArrayDataProvider")
     public Object[][] test3Data() {
         return new Object[][]{
-                {"Karol", "Lastname1", "email", "password1", "Confirm Password"},
-                {"Name1", "Lastname1", "email", "password1", "Confirm Password"},
-                {"Name1", "Lastname1", "email", "password1", "Confirm Password"},
+                {"Marena", "Izkovitz", "mhoyti@uiuc.edu", "eY3/|Z<'p'9n", "eY3/|Z<'p'9n"},
+//                {"Zachary", "Trynor", "ztrynoro@angelfire.com", "wM3$P3/#?Y2M*D(Y", "wM3$P3/#?Y2M*D(Y"},
+//                {"Filippo", "Piff", "fpifft@newsvine.com", "fS9/VF'F7ZBtN", "fS9/VF'F7ZBtN"},
         };
     }
 

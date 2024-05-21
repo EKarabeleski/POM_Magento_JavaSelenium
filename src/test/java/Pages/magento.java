@@ -30,5 +30,11 @@ public class magento {
         driver.findElement(By.id(id)).sendKeys(text);
         Thread.sleep(2000);
     }
-}
 
+    public By responseMessage = By.xpath("//*[@class='message-success success message']");
+
+    public String getResponseMessage(String xpath) throws InterruptedException {
+        driver.findElement(By.xpath(xpath)).getText();
+        return getResponseMessage(xpath);
+    }
+}
