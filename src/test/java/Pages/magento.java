@@ -1,10 +1,11 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class magento {
-
 
 
     private WebDriver driver;
@@ -16,9 +17,11 @@ public class magento {
     public void clickButton(String className) {
         driver.findElement(By.className(className)).click();
     }
+
     public void ClickButton(String xpath) {
         driver.findElement(By.xpath(xpath)).click();
     }
+
     public void Url() throws InterruptedException {
         driver.navigate().to("https://magento.softwaretestingboard.com/");
         Thread.sleep(2000);
@@ -39,8 +42,17 @@ public class magento {
         driver.findElement(By.xpath(xpath)).getText();
         return getResponseMessage(xpath);
     }
-//    //*[@class='navigation']/ul/li[2]/a this is xpath for woman tab menu
-//    "//body/div[2]/footer/div/div/div/ul/li[1]/a" xpath for scroll element
-//JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].scrollIntoView()", driver.findElement(By.xpath(xpath)));
+
+    public void sendQty(String id, int number) throws InterruptedException {
+        driver.findElement(By.id(id)).sendKeys(String.valueOf(number));
+        Thread.sleep(2000);
+    }
+
+    public void Backspace(String id) throws InterruptedException {
+        WebElement field = driver.findElement(By.id(id));
+        String value = field.getAttribute("value");
+        for (int i = 0; i < value.length(); i++) {
+            field.sendKeys(Keys.BACK_SPACE);
+        }
+    }
 }
