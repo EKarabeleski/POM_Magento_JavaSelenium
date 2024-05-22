@@ -8,10 +8,10 @@ import org.openqa.selenium.WebElement;
 public class magento {
 
 
-    private WebDriver driver;
+    private WebDriver driver;//se koristi private za da se koristi samo vo ovaa klasa
 
     public magento(WebDriver driver) {
-        this.driver = driver;
+        this.driver = driver; //konstruktor
     }
 
     public void clickButton(String className) {
@@ -29,8 +29,8 @@ public class magento {
 
     public void clickRegister(String xpath) {
         driver.findElement(By.xpath(xpath)).click();
-    }
 
+    }
     public void sendText(String id, String text) throws InterruptedException {
         driver.findElement(By.id(id)).sendKeys(text);
         Thread.sleep(2000);
