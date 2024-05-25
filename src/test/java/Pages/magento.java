@@ -55,4 +55,7 @@ public class magento {
             field.sendKeys(Keys.BACK_SPACE);
         }
     }
+    public void getTextValue(String id ) throws InterruptedException{
+        driver.findElement(By.id(id)).getText();
+    }
 }

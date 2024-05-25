@@ -69,8 +69,14 @@ public class dataProviders {
         fileWriter.close();
         return registerData;
     }
-    @DataProvider(name = "SignIn")// Using to test Add to cart functionality
+    @DataProvider(name = "SignIn")// Using to sign in with valid email and password
     public Object[][] testCart() {
+        return new Object[][]{
+                {"ztrynoro@angelfire.com", "wM3$P3/#?Y2M*D(Y"},
+        };
+    }
+    @DataProvider(name = "SignInto")// Using to sign in with valid email and password
+    public Object[][] testSignIn() {
         return new Object[][]{
                 {"ztrynoro@angelfire.com", "wM3$P3/#?Y2M*D(Y"},
         };

@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestMagentoE2E">
+    <test name="ShoppingCartTest">
+        <classes>
+            <class name="Tests.magentoSignupTests">
+                <methods>
+                    <include name="registerAccount2"/>
+                    <exclude name="registerAccount1"/>
+                </methods>
+            </class>
+            <class name="Tests.magentoTestShoppingCart">
+            </class>
+        </classes>
+    </test>
+</suite>
