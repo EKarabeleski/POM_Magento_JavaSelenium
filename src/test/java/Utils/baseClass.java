@@ -17,8 +17,10 @@ public class baseClass extends dataProviders {
         options.setBrowserVersion("121");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
     }
+
+
+
 
     @AfterMethod
     public void tearDown() {
