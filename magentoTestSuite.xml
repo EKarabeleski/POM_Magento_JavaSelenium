@@ -1,15 +1,23 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="TestMagentoE2E">
-    <test name="ShoppingCartTest">
+    <test name="TestingMagenoto">
         <classes>
             <class name="Tests.magentoSignupTests">
                 <methods>
                     <include name="registerAccount2"/>
-                    <exclude name="registerAccount1"/>
                 </methods>
             </class>
-            <class name="Tests.magentoTestShoppingCart">
+                    <class name="Tests.signIn">
+                        <methods>
+                            <include name="SignIn"/>
+                        </methods>
+                    </class>
+            <class name="Tests.AddProductToCart">
+                <methods>
+                    <include name="addProducts"/>
+                </methods>
             </class>
+            <class name="Tests.proceedToCheckout"/>
         </classes>
     </test>
 </suite>

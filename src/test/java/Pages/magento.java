@@ -14,8 +14,8 @@ public class magento {
         this.driver = driver; //konstruktor
     }
 
-    public void clickButton(String className) {
-        driver.findElement(By.className(className)).click();
+    public void clickButton(String id) {
+        driver.findElement(By.id(id)).click();
     }
 
     public void ClickButton(String xpath) {
@@ -31,9 +31,18 @@ public class magento {
         driver.findElement(By.xpath(xpath)).click();
 
     }
+
     public void sendText(String id, String text) throws InterruptedException {
         driver.findElement(By.id(id)).sendKeys(text);
         Thread.sleep(2000);
+    }
+
+    public void SendPass(String xpath, String text) {
+        driver.findElement(By.xpath(xpath)).sendKeys(text);
+    }
+
+    public void SendTextToField(String xpath, String text) {
+        driver.findElement(By.xpath(xpath)).sendKeys(text);
     }
 
     public By responseMessage = By.xpath("//*[@class='message-success success message']");//this is message for successful registration//
@@ -55,7 +64,15 @@ public class magento {
             field.sendKeys(Keys.BACK_SPACE);
         }
     }
-    public void getTextValue(String id ) throws InterruptedException{
+
+    public void getTextValue(String id) throws InterruptedException {
         driver.findElement(By.id(id)).getText();
     }
+
+    public By signInEmail = By.id("email");
+    public By clickToCart = By.xpath("//*[@class='page-header']/div[2]/div/a");//xpath za cart kopce
+    public By signIn = By.xpath("//*[@class='panel wrapper']/div/ul/li[2]/a");//xpath za sign in kopce
+    public By proceedTOCheckOutButton = By.id("top-cart-btn-checkout");
+    public String emailAddress = "kraig.swaniawski@yahoo.com";
+    public String password = "@4qv9AkES*OR";
 }

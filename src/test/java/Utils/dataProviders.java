@@ -17,9 +17,9 @@ public class dataProviders {
     @DataProvider(name = "DataProviderAccountRegistration")
     public Object[][] test3Data() {
         return new Object[][]{
-                {"Marena", "Izkovitz", "ksolanj@wikimedia.org", "eY3/|Z<'p'9n", "eY3/|Z<'p'9n"},
-                {"Zachary", "Trynor", "ztrynoro@angelfire.com", "wM3$P3/#?Y2M*D(Y", "wM3$P3/#?Y2M*D(Y"},
-                {"Filippo", "Piff", "fpifft@newsvine.com", "fS9/VF'F7ZBtN", "fS9/VF'F7ZBtN"},
+                {"Shoshana", "Rait", "sraitn@netlog.com", "fS9/VF'F7ZBtN", "fS9/VF'F7ZBtN"},
+                {"Burtie", "McNally", "bmcnallyu@toplist.cz", "fS9/VF'F7ZBtN", "fS9/VF'F7ZBtN"},
+                {"Delmar", "Piff", "dfawlteyv@intel.com", "fS9/VF'F7ZBtN", "fS9/VF'F7ZBtN"},
         };
     }
 
@@ -64,21 +64,56 @@ public class dataProviders {
             registerData[i][4] = password;
             // Save to file
             printWriter.println(Arrays.deepToString(registerData));
+
         }
         printWriter.close();
         fileWriter.close();
         return registerData;
     }
+
     @DataProvider(name = "SignIn")// Using to sign in with valid email and password
     public Object[][] testCart() {
         return new Object[][]{
-                {"ztrynoro@angelfire.com", "wM3$P3/#?Y2M*D(Y"},
+                {"marylin.kirlin@hotmail.com", "^^%JU5Q*US$g"},
         };
     }
+
     @DataProvider(name = "SignInto")// Using to sign in with valid email and password
     public Object[][] testSignIn() {
         return new Object[][]{
                 {"ztrynoro@angelfire.com", "wM3$P3/#?Y2M*D(Y"},
         };
     }
+
+    @DataProvider(name = "registrationData")
+    public Object[][] test11() throws IOException {
+        Object[][] dataFromFIle;
+        File textFile = new File("D:\\Projects\\final project import csv\\dataFromFile.txt");
+        List<String> list = new ArrayList<String>();
+        int DataRows, i = 0;
+        list = Files.readAllLines(textFile.toPath(), Charset.defaultCharset());
+        DataRows = list.size();
+        dataFromFIle = new Object[DataRows][5];
+        for (String line : list) {
+            String[] res = line.split(",");
+            dataFromFIle[i][0] = res[0];
+            dataFromFIle[i][1] = res[1];
+            dataFromFIle[i][2] = res[2];
+            dataFromFIle[i][3] = res[3];
+            dataFromFIle[i][4] = res[4];
+            i++;
+        }
+        return dataFromFIle;
+
+    }
+
+    @DataProvider(name = "ProceedTOCheckOut")
+    public Object[][] proceedToCheckOut() {
+        return new Object[][]{
+//                {"Mikel", "Karleman", "AB", "Street1", "Skopje", "1000", "North Macedonia", "071222222"},
+                {"Mohandis","Trower","AB","Street1", "Skopje", "1000", "North Macedonia", "071222222"}
+        };
+    }
+
 }
+
