@@ -1,5 +1,6 @@
 package Pages;
 
+import net.bytebuddy.utility.RandomString;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -75,4 +76,11 @@ public class magento {
     public By proceedTOCheckOutButton = By.id("top-cart-btn-checkout");
     public String emailAddress = "kraig.swaniawski@yahoo.com";
     public String password = "@4qv9AkES*OR";
+
+    public String randomString() {
+            String email;
+            RandomString randomString = new RandomString(10);
+            email =  randomString.nextString() + "@test.com";
+            return email;
+        }
 }

@@ -64,5 +64,9 @@ public class magentoTests extends baseClass {
             Assert.assertEquals(responseMessage.getText(), "Thank you for registering with Main Website Store.");
 
     }
+    @Test
+    public void test2() throws InterruptedException{
+
+    }
 }
 

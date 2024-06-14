@@ -74,7 +74,7 @@ public class dataProviders {
     @DataProvider(name = "SignIn")// Using to sign in with valid email and password
     public Object[][] testCart() {
         return new Object[][]{
-                {"marylin.kirlin@hotmail.com", "^^%JU5Q*US$g"},
+                {"kraig.swaniawski@yahoo.com", "@4qv9AkES*OR"},
         };
     }
 

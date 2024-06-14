@@ -5,13 +5,16 @@ import Utils.baseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class magentoTestShoppingCart extends baseClass{
+public class magentoTestShoppingCart extends baseClass {
     @Test(dataProvider = "SignIn")
     public void ShoppingCartTest(String email, String password) throws InterruptedException {
         magento magentoTest = new magento(driver);
@@ -33,20 +36,50 @@ public class magentoTestShoppingCart extends baseClass{
         magentoTest.ClickButton("//*[@id=\"option-label-color-93-item-56\"]");//Click to choose colour"orange://
         driver.findElement(By.xpath("//*[@id='qty']")).sendKeys(Keys.RIGHT);
         magentoTest.Backspace("qty");//using backspace I delete the previous qty //
-        magentoTest.sendQty("qty",2);//choose the qty of product
+        magentoTest.sendQty("qty", 2);//choose the qty of product
         magentoTest.ClickButton("//*[@id=\"product-addtocart-button\"]");//add product to cart //
 
         Thread.sleep(2000);
         String productAddedToCart = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div")).getText();// Validation to confirm that we
         String message = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div")).getText();
-        Assert.assertEquals(productAddedToCart,message); // Validation to confirm that we have added the product successfully
+        Assert.assertEquals(productAddedToCart, message); // Validation to confirm that we have added the product successfully
         Thread.sleep(2000);
         magentoTest.ClickButton("//*[@class='header content']/div/a");//click on cart //
         magentoTest.ClickButton("//*[@id='top-cart-btn-checkout']");//Click on proceed to checkout//
         String title = driver.getTitle();
-        Assert.assertEquals(title,"Checkout");
+        Assert.assertEquals(title, "Checkout");
         Thread.sleep(2000);
+        magentoTest.ClickButton("//*[@id='top-cart-btn-checkout']");//click on proceed to Checkout//
+        Thread.sleep(3000);
+//        Assert.assertEquals(driver.findElement(By.xpath("//*[@id='SVAM9VC']")).getText(),"Joan");
 
+        magentoTest.SendTextToField("//*[@name='company']", "AB");
+        magentoTest.SendTextToField("//*[@name='street[0]']", "Street");
+        magentoTest.SendTextToField("//*[@name='city']", "Skopje");
+        magentoTest.SendTextToField("//*[@name='postcode']", "1000");
+        magentoTest.SendTextToField("//*[@name='country_id']", "Macedonia");
+        magentoTest.SendTextToField("//*[@name='telephone']", "071222222");
+        Thread.sleep(3000);
+        magentoTest.ClickButton("//*[@class='button action continue primary']"); //click proceed to checkout button
+//        Thread.sleep(5000);
+
+        WebElement placeOrderButton = wait.until(
+                ExpectedConditions.presenceOfElementLocated(By.xpath("//button[contains(., 'Place Order')]"))
+        );
+        Actions actions = new Actions(driver);
+        actions.moveToElement(placeOrderButton).perform();
+        placeOrderButton.click();
+
+        WebElement element = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/main/div[1]/h1/span"))
+        );
+
+        String elementText = element.getText();
+        System.out.println("The text of the element is: " + elementText);
+        String actualText = element.getText();
+        String expectedText = "Thank you for your purchase!";
+
+        Assert.assertEquals(actualText, expectedText, "The text of the element does not match the expected value.");
     }
-
 }
+
