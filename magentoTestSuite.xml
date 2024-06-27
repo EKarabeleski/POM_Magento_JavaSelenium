@@ -4,12 +4,12 @@
         <classes>
             <class name="Tests.magentoSignupTests">
                 <methods>
-                    <include name="registerAccount2"/>
+                    <include name="CreateAccount"/>
                 </methods>
             </class>
                     <class name="Tests.signIn">
                         <methods>
-                            <include name="SignIn"/>
+                            <include name="SignInFromTxt"/>
                         </methods>
                     </class>
             <class name="Tests.AddProductToCart">
@@ -17,7 +17,13 @@
                     <include name="addProducts"/>
                 </methods>
             </class>
-            <class name="Tests.proceedToCheckout"/>
+            <class name="Tests.proceedToCheckout">
+                <methods>
+                    <include name="checkout">
+                    </include>
+                </methods>
+            </class>
+
         </classes>
     </test>
 </suite>
