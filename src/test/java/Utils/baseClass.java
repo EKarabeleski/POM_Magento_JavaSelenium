@@ -17,10 +17,9 @@ public class baseClass extends dataProviders {
         options.setBrowserVersion("121");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.get("https://magento.softwaretestingboard.com/");
+        driver.manage().window().maximize();
     }
-
-
-
 
     @AfterMethod
     public void tearDown() {
